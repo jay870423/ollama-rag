@@ -40,11 +40,12 @@ cd ollama-rag
 
 ### 2. 配置 Ollama
 
-确保您已经安装并运行了 Ollama 服务。本项目默认配置使用 `qwen2.5:1.5b` 模型。您可以在 `application.properties` 文件中修改模型配置：
+确保您已经安装并运行了 Ollama 服务。本项目默认配置使用  `mxbai-embed-large` 、`qwen2.5:1.5b` 模型。您可以在 `application.properties` 文件中修改模型配置：
 
 ```properties
 # Ollama 模型配置
 spring.ai.openai.chat.options.model=qwen2.5:1.5b
+ollama.embedding-model=mxbai-embed-large
 ```
 
 ### 3. 编译项目
