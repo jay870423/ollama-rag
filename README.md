@@ -217,3 +217,7 @@ java -Xmx4g -jar target/ollama-rag-0.0.1-SNAPSHOT.jar
 ## 许可证
 
 MIT License
+
+## 运行效果图
+<img width="1494" height="846" alt="image" src="https://github.com/user-attachments/assets/2c74be33-0a02-4f16-8722-f36782be7cd8" />
+
