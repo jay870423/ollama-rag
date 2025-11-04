@@ -1,0 +1,47 @@
+/* Font Awesome 4.7.0 - 本地版本，修改了字体路径 */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), 
+       url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+       url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), 
+       url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 这里需要包含完整的Font Awesome CSS内容 */
+/* 但由于文件太大，我们使用简化版本，确保基本图标可用 */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 常用图标的CSS */
+.fa-upload:before { content: "\f093"; }
+.fa-search:before { content: "\f002"; }
+.fa-trash:before { content: "\f1f8"; }
+.fa-times:before { content: "\f00d"; }
+.fa-check:before { content: "\f00c"; }
+.fa-info-circle:before { content: "\f05a"; }
+.fa-exclamation-circle:before { content: "\f06a"; }
+.fa-spinner:before { content: "\f110"; }
+.fa-refresh:before { content: "\f021"; }
+.fa-file-text-o:before { content: "\f0f6"; }
+.fa-folder:before { content: "\f07b"; }
+.fa-home:before { content: "\f015"; }
+.fa-cog:before { content: "\f013"; }
+.fa-question-circle:before { content: "\f059"; }
+.fa-list:before { content: "\f03a"; }
+.fa-clock-o:before { content: "\f017"; }
+.fa-calendar:before { content: "\f073"; }
+.fa-user:before { content: "\f007"; }
+.fa-plus:before { content: "\f067"; }
+.fa-minus:before { content: "\f068"; }
+.fa-save:before { content: "\f0c7"; }
+.fa-download:before { content: "\f019"; }
+.fa-eye:before { content: "\f06e"; }
+.fa-eye-slash:before { content: "\f070"; }

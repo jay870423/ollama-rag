@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能文档助手 - 本地RAG系统</title>
+    <!-- 引入Font Awesome -->
+    <!-- 引入Font Awesome (本地版本，带正确字体路径) -->
+    <link href="vendor/css/font-awesome-local.css" rel="stylesheet">
+    <!-- 引入Tailwind CSS (本地版本) -->
+    <script src="vendor/js/tailwindcss.js"></script>
+    <!-- 引入Vue.js (本地版本) -->
+    <script src="vendor/js/vue.global.js"></script>
+    <!-- 引入Axios (本地版本) -->
+    <script src="vendor/js/axios.min.js"></script>
+    <!-- Tailwind 配置 - 确保在Tailwind加载后执行 -->
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查tailwind是否已加载
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#3B82F6',
+                                secondary: '#10B981',
+                                accent: '#8B5CF6',
+                                dark: '#1F2937',
+                                light: '#F9FAFB'
+                            },
+                            fontFamily: {
+                                sans: ['Inter', 'system-ui', 'sans-serif'],
+                            },
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+    <!-- 自定义样式 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-all-300 {
+                transition: all 300ms ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-light to-gray-100 min-h-screen font-sans text-dark">
+    <div id="app" class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- 页面内容将由Vue组件渲染 -->
+    </div>
+
+    <!-- 确保Vue加载完成后加载app.js -->
+    <script>
+        // 检查Vue是否已加载的函数
+        function checkVueLoaded() {
+            if (typeof Vue !== 'undefined') {
+                console.log('Vue已成功加载');
+                loadAppJs();
+            } else {
+                console.log('等待Vue加载...');
+                setTimeout(checkVueLoaded, 100);
+            }
+        }
+        
+        // 加载app.js
+        function loadAppJs() {
+            const script = document.createElement('script');
+            script.src = 'app.js';
+            script.async = false;
+            script.onload = function() {
+                console.log('app.js已成功加载');
+            };
+            script.onerror = function() {
+                console.error('app.js加载失败');
+                const appElement = document.getElementById('app');
+                if (appElement) {
+                    appElement.innerHTML = `
+                        <div class="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded mt-8">
+                            <strong class="font-bold">错误：</strong>
+                            <span>应用程序脚本加载失败，请刷新页面重试。</span>
+                        </div>
+                    `;
+                }
+            };
+            document.body.appendChild(script);
+        }
+        
+        // 开始检查Vue加载状态
+        checkVueLoaded();
+    </script>
+</body>
+</html>
